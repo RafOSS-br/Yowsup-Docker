@@ -1,11 +1,11 @@
 version: '3.4'
-#Para realizar o debug use python /tmp/debugpy --wait-for-client --listen 0.0.0.0:5678 {file} 
+#Para realizar o debug use   
 services:
   yowsup:
     image: yowsup
     build:
       context: .
       dockerfile: ./Dockerfile
-    command: ["sh", "-c", "pip install debugpy -t /tmp "]
+    command: ["python", "/tmp/debugpy --wait-for-client --listen 0.0.0.0:5678 {file}"]
     ports:
       - 5678:5678
